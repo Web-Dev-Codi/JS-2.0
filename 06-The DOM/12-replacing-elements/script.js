@@ -50,15 +50,28 @@ function changeAllLi() {
 // Replacing the header
 
 function replaceChildHeading() {
+    // grabbing the parent container 
     const header = document.querySelector('header');
+    // grabbing the h1 inside parent container
+    const h1 = document.querySelector('h1');
+    // creating the element we are using to replace 
+    const h2 = document.createElement('h2');
+    // assigning an id to our created element
+    h2.id = 'app-title';
+    // adding content
+    h2.textContent = 'Shopping List V2';
+    // using replaceChild to overwrite the current h1 element
+    header.replaceChild(h2,h1)
 
-    
+
 }
 
 
 // Don'T forget to invoke to wake the function up.
-replaceFirsElement();
+// replaceFirsElement();
 
-replaceSecondItem();
+// replaceSecondItem();
 
-changeAllLi()
+// changeAllLi();
+
+replaceChildHeading();
