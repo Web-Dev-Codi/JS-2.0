@@ -42,7 +42,7 @@ const youngPeople = people
     // taking the return of the filter() and then map a returning object showing just the name and email
     .map(youngins => {
         return {
-            name: youngins.name,
+            name: youngins.firstName + ' ' + youngins.lastName ,
             email: youngins.email
         }
     })
