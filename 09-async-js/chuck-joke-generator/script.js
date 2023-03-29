@@ -19,8 +19,10 @@ const getJoke = () => {
                 // storing respone in a variable
                 const data = JSON.parse(this.response);
                 console.log(data);
-                // taking the parsed data and dispaying it in the DOM
-                el.innerHTML = `<p>${data.value}</p>`
+               // taking the parsed data and dispaying it in the DOM
+                el.innerHTML = `<div>
+                <p>${data.value}</p>
+                </div>`
             } else {
                 // message output for possible network error
                 el.innerHTML = `<p>Networ Error</p>`
