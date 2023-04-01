@@ -4,11 +4,23 @@ const posts = [
   { title: 'Post Two', body: 'This is post two' },
 ];
 
-function createPost(post, cb) {
-  setTimeout(() => {
-    posts.push(post);
-    cb();
-  }, 2000);
+function createPost(post) {
+  // returning a new promise 
+  return new Promise((resolve, reject) => {
+    // placed the timeout indside the promise body
+    setTimeout(() => {
+      let error = true;
+
+      if (!error) {
+        posts.push(post)
+        resolve()
+      } else {
+        reject('Error promise not resolved')
+      }
+      posts.push(post);
+      resolve();
+    }, 2000);
+  });
 }
 
 function getPosts() {
@@ -21,4 +33,16 @@ function getPosts() {
   }, 1000);
 }
 
-createPost({ title: 'Post Three', body: 'This is post' }, getPosts);
+
+// function for errors to be displayed in the dom
+function showError(error) {
+  const h3 = document.createElement('h3')
+  h3.innerHTML = `<strong>${error}</strong>`
+  document.getElementById('posts').appendChild(h3)
+}
+
+
+// adding .then since we are returning a promise
+createPost({ title: 'Post Three', body: 'This is post' })
+  .then(getPosts)
+  .catch(showError)
