@@ -48,12 +48,12 @@ function toggleCompleted(e) {
     if (e.target.classList.contains('todo')) {
         e.target.classList.toggle('done');
 
-        updateTodo();
+        updateTodo(e.target.dataset.id , e.target.classList.contains('done'));
     }
 }
 
 function updateTodo(id, completed) {
-
+    console.log(id, completed);
 }
 
 const init = () => {
