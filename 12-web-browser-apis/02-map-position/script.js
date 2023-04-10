@@ -23,6 +23,4 @@ navigator.geolocation.getCurrentPosition(function (position) {
 
     marker.bindPopup('<h2 class="location">My Current Location</h2>')
         .openPopup();
-
-
 });
