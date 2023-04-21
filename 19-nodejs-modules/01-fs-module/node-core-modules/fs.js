@@ -27,7 +27,7 @@ const fs = require('fs/promises');
 //         console.log('File Created')
 //     } catch (error) {
 //         console.log(error)
-        
+
 //     }
 // }
 
@@ -48,13 +48,41 @@ const fs = require('fs/promises');
 // readFile('file4.txt');
 
 // delete File
-async function deleteItem(filename) {
+// async function deleteItem(filename) {
+//     try {
+//         await fs.unlink(filename)
+//         console.log('Deleted File')
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// deleteItem('file3.txt')
+
+// File rename
+// async function renameFile(oldname, newName) {
+//     try {
+//         await fs.rename(oldname, newName);
+//         console.log(`File ${oldname} renamed to ${newName}`)
+
+//     } catch (error) {
+//         console.log(error);
+//     }
+
+// }
+
+// renameFile('RenamedFile', 'RenamedFilev2.txt');
+
+
+// Make a folder
+async function createFolder(folderName) {
     try {
-        await fs.unlink(filename)
-        console.log('Deleted File')
+        fs.mkdir(folderName);
+        console.log(`${folderName} was created Bro`);
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 
-deleteItem('file3.txt')
+createFolder('Folder-Created');
+
