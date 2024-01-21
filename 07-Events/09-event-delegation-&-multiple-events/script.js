@@ -16,7 +16,7 @@ list.addEventListener('click', (e) => {
 
 // NOT EFFICIANT
 // listItems.forEach(item => {
-//     // Adding event for the click event anmd removing li when clicked
+//     // Adding event for the click event and removing li when clicked
 //     item.addEventListener('click', (e) => {
 //         e.target.remove(item);
 //     });
